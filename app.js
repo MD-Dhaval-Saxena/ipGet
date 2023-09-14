@@ -12,6 +12,9 @@ app.get('/ip', (req, res)=> {
     console.log(clientIp)
     res.send({ ip : clientIp})
 })
+app.get('/err', (req, res)=> { 
+  throw new Error('BROKEN')
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
